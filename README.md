@@ -45,12 +45,12 @@ Hva ser vi?
 PLAY [all] *****************************************************************************************************************
 
 TASK [Print a message] *****************************************************************************************************
-<span style="color: green;">ok: [localhost] => {
+ok: [localhost] => {
     "msg": "”Hello world!\""
 }
-</span>
+
 PLAY RECAP *****************************************************************************************************************
-<span style="color: green;">olocalhost                  : ok=1 </span>   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 ```
 Øverst kommer en linje som oppsummerer hvilke maskiner vi kjører mot,
