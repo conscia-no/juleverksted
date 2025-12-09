@@ -10,7 +10,7 @@ RUN apk add --no-cache \
 RUN python3 -m venv /opt/ansible-venv
 
 RUN /opt/ansible-venv/bin/pip install --upgrade pip && \
-    /opt/ansible-venv/bin/pip install ansible
+    /opt/ansible-venv/bin/pip install ansible ciscoisesdk
 
 ENV PATH="/opt/ansible-venv/bin:$PATH"
 
