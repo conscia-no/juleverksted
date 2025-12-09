@@ -1,7 +1,5 @@
-# Use a minimal base image
 FROM python:3.12-alpine
 
-# Install build dependencies
 RUN apk add --no-cache \
     openssh \
     sshpass \
@@ -9,15 +7,14 @@ RUN apk add --no-cache \
     libffi-dev \
     openssl-dev
 
-# Create virtual environment
 RUN python3 -m venv /opt/ansible-venv
 
-# Install Ansible
 RUN /opt/ansible-venv/bin/pip install --upgrade pip && \
     /opt/ansible-venv/bin/pip install ansible
 
 ENV PATH="/opt/ansible-venv/bin:$PATH"
 
+# Her installerer du de collectionene du trenger
 RUN ansible-galaxy collection install cisco.ise
 
 WORKDIR /ansible
