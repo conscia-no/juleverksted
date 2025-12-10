@@ -1,3 +1,5 @@
+![Ansible on ISE](img/juleverksted.png)
+
 **Velkommen til juleverksted med Ansible og ISE**
 
 Vi kan møte på mange problemer når vi skal installere ansible på en lokal maskin. Vi er her for å ha det gøy, så vi installerer Docker istedet og bygger en container som kjører Ansible. Her er hvordan vi gjør det:
