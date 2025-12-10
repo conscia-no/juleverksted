@@ -12,7 +12,7 @@ Hvis du følger med i Docker Desktop applikasjonen, vil du se en kontainer bli o
 
 ## Vår første playbook
 
-Åpne aller først playbook.yml filen i editoren din (VSCode eller annet), se på strukturen, prøv så å kjøre den med kommandoen `./run-ansible.sh -i inventory playbook.yml` Bruk selvfølgelig run-ansible.bat eller .ps1 versjonen hvis du trenger det
+Åpne aller først playbook.yml filen i editoren din (VSCode eller annet), se på strukturen, prøv så å kjøre den med kommandoen `./run-ansible.sh -i inventory.yml playbook.yml` Bruk selvfølgelig run-ansible.bat eller .ps1 versjonen hvis du trenger det
 
 
 Hva forteller vi til ansible med denne kommandoen? -I forteller ansible hvilken fil den skal bruke som Inventory. Inventory filen inneholder en liste over maskiner og hvordan vi skal koble oss til dem. Filen som ligger her inneholder bare localhost. Mer om dette senere.
