@@ -46,3 +46,4 @@ Du kan også definere variabler mens scriptet kjører, ved å bruke ```register`
 
 Vil du vite mer om variabler brenner ChatGPT etter å forklare.
 
+[Mer om inventory og playbooks](README4.md)
