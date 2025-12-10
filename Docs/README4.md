@@ -58,7 +58,7 @@ Lim inn følgende:
         var: ise_version
 ```
 
-Vi ser at vi bruker ulike moduler: Først cisco.ise.system_facts, så cisco.ise.node_facts og til slutt cisco.ise.varsion_info.
+Vi ser at vi bruker ulike moduler: Først cisco.ise.system_facts, og registrerer returvariablene fra denne som `ise_sys`. Så kjører vi cisco.ise.node_facts og til slutt cisco.ise.varsion_info.
 cisco.ise.system_facts henter cluster-nivå informasjon, cisco.ise.node_facts henter informasjon om ise hosten og til slutt bruker vi cisco.ise.version_info for å hente versjonen av ISE som er installert.
 
 Vi kjører playbooken med: `./run-ansible.sh -i inventory.yml -e "username=<brukernavn>  password=<passord>" ise-facts.yml`
