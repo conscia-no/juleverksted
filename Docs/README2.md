@@ -23,5 +23,32 @@ Under Requirements har cisco.ise for øvrig noen krav til ting som skal være in
 
 Ansible er flink til å gjøre de samme tingene på flere maskiner i parallell, men noen ganger skal man gjøre de samme tingene på flere objekter på samme maskin - For eksempel å sette description på interfacene på en switch - da bruker man en loop.
 
+La oss si at vi har en liste med interface navn:
+```
+interfaces:
+  - GigabitEthernet0/0
+  - GigabitEthernet0/1
+  - GigabitEthernet0/2
+  - Vlan1
+```
+Så kan vi lage en playbook lik denne:
+```
+---
+- name: Set description on all physical interfaces
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Apply description to all physical interfaces
+      cisco.ios.ios_interface:
+        name: "{{ item }}"
+        description: "Configured by Ansible"
+      loop: "{{ interfaces }}"
+      when: item is search('GigabitEthernet*|FastEthernet*|TenGigabitEthernet*')
+```
+Loop: linjen i scriptet vil la ansible loope igjennom interfaces variabelen, som er en liste med interface navn og utføre det tasken er satt opp til, som er å sette description til "Configured by Ansible". Vi kan bruke variabelen 'item' til å referere til hver oppføring i listen, litt som i python ´for item in interfaces:´
+when: linjen avgjør om vi skal utføre endringen på akkurat denne oppføringen. I dette tilfellet vil ikke 'Vlan1' bli satt description på.
+
+
 
 [Greie ting å kunne om Ansible](README3.md)

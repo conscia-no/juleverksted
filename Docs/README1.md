@@ -1,11 +1,10 @@
 ## Kjøre ansible script
 
 Når docker imaget er bygget, må vi kjøre det.
-Avhengig av hvilket operativsystem du har, bruker vi ulike filer for å kjøre det: I MacOS og linux: bruk `run-ansible.sh`. I Windows, bruk `run-ansible.bat` eller `run-ansible.ps1`, hvis du liker powershell best. Hvis du er mac eller linux bruker, husk å sette run-ansible.sh til å være eksekverbart.
+Avhengig av hvilket operativsystem du har, bruker vi ulike filer for å kjøre det: I MacOS og linux: bruk `run-ansible.sh`. I Windows bruker du `run-ansible.bat`, eller `run-ansible.ps1` hvis du liker powershell best. Hvis du er mac eller linux bruker, husk å sette run-ansible.sh til å være eksekverbart.
 
 Run-ansible scriptet vil gjøre følgende:
-Opprette en container
-Mappe opp katalogen du står i til en katalog i containeren.
+Opprette en container, og mappe opp katalogen du står i til en katalog i containeren.
 Kjøre ansible-playbook med de parametrene du gir til run-ansible scriptet.
 Når scriptet er ferdig, avsluttes og slettes containeren og for deg vil se ut som om du kjører ansible lokalt på maskinen din, alle filer leses og skrives til katalogen du står i.
 Hvis du følger med i Docker Desktop applikasjonen, vil du se en kontainer bli opprettet og slettet kjapt.

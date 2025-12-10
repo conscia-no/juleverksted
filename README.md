@@ -1,6 +1,6 @@
 **Velkommen til juleverksted med Ansible og ISE**
 
-Vi kan møte på mange problemer når vi skal installere ansible på en lokal maskin. Vi er her for å ha det gøy, så vi installerer Docker istedet og bygger et container som kjører Ansible. Her er hvordan vi gjør det:
+Vi kan møte på mange problemer når vi skal installere ansible på en lokal maskin. Vi er her for å ha det gøy, så vi installerer Docker istedet og bygger en container som kjører Ansible. Her er hvordan vi gjør det:
 
 Aller først: Mange bruker vscode til å redigere filer. Du finner det her: [https://code.visualstudio.com/download](https://code.visualstudio.com/download) hvis du ikke har det fra før av. Du kan selvfølgelig bruke den IDE'en du liker best.
 
@@ -14,7 +14,7 @@ Hvis du ikke har Docker Desktop installert, gå til [https://www.docker.com/prod
 ## Bygge Docker image med Ansible
 
 Vi trenger koden som ligger i Github repoet her. 
-Velg den grønne knappen det står Code på nesten øverst, klikk på nedtrekksboksen og kopier lenken.
+Finn den grønne knappen det står Code på nesten øverst på denne siden, klikk på nedtrekksboksen og kopier lenken.
 
 Åpne et kommandolinjevindu på maskinen din, finn en grei plass å jobbe fra og skriv `git clone <linken du kopierte fra github> ` 
 Når den har lastet ned, gå inn i 'juleverksted' katalogen i kommandolinjevinduet og skriv `docker build -t ansible-image .` - Husk punktumet på slutten. 

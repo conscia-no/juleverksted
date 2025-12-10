@@ -1,6 +1,6 @@
 ## Et eksempel med ISE
 
-La oss lage en playbook der vi snakker med ISE.
+Nå har det vært mye tekst! La oss lage en playbook der vi snakker med ISE.
 
 # Inventory
 
