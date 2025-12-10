@@ -8,6 +8,7 @@ Aller først: Mange bruker vscode til å redigere filer. Du finner det her: [htt
 
 Har du git på maskinen din? Hvis ikke, installer Git også:
 Gå til [https://git-scm.com/install/](https://git-scm.com/install/) og last ned git for ditt operativsystem.
+(MAC brukere: Installer Brew fra [denne linken](https://brew.sh/) Det kan ta litt tid, så vær tolmodig)
 
 ## Installere Docker Desktop
 

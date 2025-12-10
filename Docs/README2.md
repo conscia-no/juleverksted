@@ -8,7 +8,7 @@ Ansible er skrevet for å være idempotent. Det vil si at du kan kjøre en playb
 
 ### Moduler og Collections
 
-Ansible i seg selv kan ikke så mye, men benytter plugins kalt moduler til å snakke med ulike typer utstyr og tjenester. Disse kommmer i samlinger som heter collections, og er de som kommuniserer med utstyret du vil jobbe med. Collections installeres med kommandoen ```ansible-galaxy install <collection navn> ```` Men hva gjør de? Ta en kikk i [Ansible dokumentasjonen](https://docs.ansible.com/projects/ansible/11/collections/cisco/ise/index.html#plugin-index) og finn ut! Linken går til cisco.ise collection'en, men blar du i menyen til venstre finner du collections for andre cisco produkter og ting fra andre leverandører.
+Ansible i seg selv kan ikke så mye, men benytter plugins kalt moduler til å snakke med ulike typer utstyr og tjenester. Disse kommmer i samlinger som heter collections, og er de som kommuniserer med utstyret du vil jobbe med. Collections installeres med kommandoen ```ansible-galaxy install <collection navn> ``` Men hva gjør de? Ta en kikk i [Ansible dokumentasjonen](https://docs.ansible.com/projects/ansible/11/collections/cisco/ise/index.html#plugin-index) og finn ut! Linken går til cisco.ise collection'en, men blar du i menyen til venstre finner du collections for andre cisco produkter og ting fra andre leverandører.
 
 ### Dokumentasjon
 
