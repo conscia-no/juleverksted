@@ -12,13 +12,12 @@ Legg inn følgende:
 all:
   hosts:
     ise1:
-      ansible_host: devnetsandboxise.cisco.com
+      ansible_host: 10.1.112.166
       ansible_connection: httpapi
-      ansible_network_os: cisco.ise.ise
       ansible_httpapi_use_ssl: yes
       ansible_httpapi_validate_certs: no
-      ansible_user: {{ ise_username }}
-      ansible_password: "{{ ise_password }}"
+      ansible_user: "{{ username }}"
+      ansible_password: "{{ password }}"
 ```
 Se dokumentasjonen til modulen du skal jobbe med for hva den trenger - men vi ser kjapt at vi skal bruke https, vi skal ignorere sertifikatfeil, vi skal logge inn med brukernavn og passord som vi får fra en variabel.
 
@@ -34,34 +33,36 @@ Lim inn følgende:
   gather_facts: no
 
   tasks:
-    - name: Gather system facts from ISE
-      cisco.ise.system_facts:
-      register: ise_sys
-
-    - name: Show system facts
-      debug:
-        var: ise_sys
-
+  
     - name: Get node facts
-      cisco.ise.node_facts:
+      cisco.ise.node_info:
+        ise_hostname: "{{hostvars[inventory_hostname].ansible_host}}"
+        ise_username: "{{username}}"
+        ise_password: "{{password}}"
+        ise_verify: "no"
       register: ise_node
 
     - name: Show node facts
       debug:
-        var: ise_node
+        var: ise_node.ise_response
 
-    - name: Fetch version info
-      cisco.ise.version_info:
-      register: ise_version
+    - name: Get Node Deployment Info
+      cisco.ise.patch_info:
+        ise_hostname: "{{hostvars[inventory_hostname].ansible_host}}"
+        ise_username: "{{username}}"
+        ise_password: "{{password}}"
+        ise_verify: "no"
+      register: patch_info
 
-    - debug:
-        var: ise_version
+    - name: Show patch_info
+      ansible.builtin.debug:
+        var: patch_info.ise_response
 ```
 
-Vi ser at vi bruker ulike moduler: Først cisco.ise.system_facts, og registrerer returvariablene fra denne som `ise_sys`. Så kjører vi cisco.ise.node_facts og til slutt cisco.ise.varsion_info.
-cisco.ise.system_facts henter cluster-nivå informasjon, cisco.ise.node_facts henter informasjon om ise hosten og til slutt bruker vi cisco.ise.version_info for å hente versjonen av ISE som er installert.
+Vi ser at vi bruker ulike moduler: Først cisco.ise.node_info, og registrerer returvariablene fra denne som `ise_node`. Så kjører vi cisco.ise.patch_info.
+cisco.ise.node_info henter navnet på ISE installasjonen, cisco.ise.patch_info henter informasjon om hvilke patcher som er installerte.
 
-Vi kjører playbooken med: `./run-ansible.sh -i inventory.yml -e "username=<brukernavn>  password=<passord>" ise-facts.yml`
+Vi kjører playbooken med: `./run-ansible.sh ansible-playbook -i inventory.yml -e username=<brukernavn>  -e password=<passord> ise-facts.yml`
 
 Brukernavnet og passordet får dere som chatmelding i webex.
 

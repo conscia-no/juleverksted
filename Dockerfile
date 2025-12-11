@@ -18,4 +18,4 @@ ENV PATH="/opt/ansible-venv/bin:$PATH"
 RUN ansible-galaxy collection install cisco.ise
 
 WORKDIR /ansible
-CMD [ "ansible-playbook", "$1"]
+CMD [ "/bin/bash"]

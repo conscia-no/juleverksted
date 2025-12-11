@@ -8,16 +8,21 @@ Ansible er skrevet for å være idempotent. Det vil si at du kan kjøre en playb
 
 ### Moduler og Collections
 
-Ansible i seg selv kan ikke så mye, men benytter plugins kalt moduler til å snakke med ulike typer utstyr og tjenester. Disse kommmer i samlinger som heter collections, og er de som kommuniserer med utstyret du vil jobbe med. Collections installeres med kommandoen ```ansible-galaxy install <collection navn> ``` Men hva gjør de? Ta en kikk i [Ansible dokumentasjonen](https://docs.ansible.com/projects/ansible/11/collections/cisco/ise/index.html#plugin-index) og finn ut! Linken går til cisco.ise collection'en, men blar du i menyen til venstre finner du collections for andre cisco produkter og ting fra andre leverandører.
+Ansible i seg selv kan ikke så mye, men benytter plugins kalt moduler til å snakke med ulike typer utstyr og tjenester. Disse kommmer i samlinger som heter collections, og er de som kommuniserer med utstyret du vil jobbe med. Collections installeres med kommandoen ```ansible-galaxy install <collection navn> ``` Men hva gjør de? Ta en kikk i [Ansible dokumentasjonen](https://galaxy.ansible.com/ui/repo/published/cisco/ise/docs/) og finn ut! Linken går til cisco.ise collection'en, men du kan søke opp collections for andre cisco produkter og ting fra andre leverandører.
 
 ### Dokumentasjon
 
-Ta en kikk på [cisco.ise.endpoint_info](https://docs.ansible.com/projects/ansible/11/collections/cisco/ise/endpoint_info_module.html#ansible-collections-cisco-ise-endpoint-info-module) modulen.
+Ta en kikk på [cisco.ise.endpoint_info](https://galaxy.ansible.com/ui/repo/published/cisco/ise/content/module/endpoints_info/) modulen.
 
 Du finner først et Synopsis kapittel, som forteller hva modulen gjør, så kommer Parameters som viser hvordan man kan tilpasse spørringene, hvilke parametre som er påkrevet osv.
 Etter det kommer eksempler på bruk. Til slutt kommer eksempler på hvordan dataene man får tilbake er formatert. Vi er dypt nedi nerdeland her - det er lov å spørre chatgpt nå.
 
 Under Requirements har cisco.ise for øvrig noen krav til ting som skal være installert. Vi har gjort det under byggingen av docker imaget for cisco.ise, men prøver du å gå mot noe annet enn ise, ta en kikk i Dockerfile filen. Du kan se hvor collections blir installert og hvor andre ting blir installert. Gjør du endringer: Kjør build kommandoen på nytt.
+
+### ansible-doc
+
+Vi skal jobbe med Cisco ISE. Det har blitt gjort endringer på ansible modulene til ISE i det siste, hvis dokumentasjonen av en eller annen grunn ikke er oppdatert kan du bruke ansible-doc kommandoen til å generere den.
+Prøv `./run-ansible.sh ansible-doc -l cisco.ise`for å liste ut modulene som finnes i cisco.ise collection'en og `./run-ansible.sh ansible-doc cisco.ise.node_patch_info` for å se informasjon om node_patch_info metoden.
 
 ### Looper
 

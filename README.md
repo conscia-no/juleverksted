@@ -8,7 +8,7 @@ Aller først: Mange bruker vscode til å redigere filer. Du finner det her: [htt
 
 Har du git på maskinen din? Hvis ikke, installer Git også:
 Gå til [https://git-scm.com/install/](https://git-scm.com/install/) og last ned git for ditt operativsystem.
-(MAC brukere: Installer Brew fra [denne linken](https://brew.sh/) Det kan ta litt tid, så vær tolmodig)
+(MAC brukere: Installer Brew fra [denne linken](https://brew.sh/) hvis du ikke har det fra før. Det tar litt tid, så vær tolmodig)
 
 ## Installere Docker Desktop
 
@@ -24,4 +24,4 @@ Når den har lastet ned, gå inn i 'juleverksted' katalogen i kommandolinjevindu
 Det kommer en del tekst mens docker bygger det vi trenger, men til slutt kommer vi tilbake til kommandolinjen.
 
 
-Nå er vi er klare for å [teste docker imaget vårt](Docs/README1.md)
+Nå er vi er klare for å [teste docker imaget vi har laget](Docs/README1.md)
