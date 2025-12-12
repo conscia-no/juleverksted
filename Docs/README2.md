@@ -22,7 +22,7 @@ Under Requirements har cisco.ise for øvrig noen krav til ting som skal være in
 ### ansible-doc
 
 Vi skal jobbe med Cisco ISE. Det har blitt gjort endringer på ansible modulene til ISE i det siste, hvis dokumentasjonen av en eller annen grunn ikke er oppdatert kan du bruke ansible-doc kommandoen til å generere den.
-Prøv `./run-ansible.sh ansible-doc -l cisco.ise`for å liste ut modulene som finnes i cisco.ise collection'en og `./run-ansible.sh ansible-doc cisco.ise.node_patch_info` for å se informasjon om node_patch_info metoden.
+Prøv `./run-ansible.sh ansible-doc -l cisco.ise`for å liste ut modulene som finnes i cisco.ise collection'en og `./run-ansible.sh ansible-doc cisco.ise.patch_info` for å se informasjon om node_patch_info metoden.
 
 ### Looper
 
