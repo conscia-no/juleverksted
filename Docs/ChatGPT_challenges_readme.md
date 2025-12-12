@@ -70,7 +70,7 @@ Disse har vi allerede gjort, men bruk ansible-doc og se hvilke moduler som finne
 ## 🔴 Level 4 — Expert / Challenge Tasks
 
 ### 10. Build a Dynamic Inventory from ISE
-- Query network devices
+- Query network devices using `ansible.builtin.shell`
 - Create a structured inventory grouped by:
   - device type
   - location
