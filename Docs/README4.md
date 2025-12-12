@@ -28,6 +28,7 @@ Lag en ny fil som heter ise-facts.yml Her skal vi lese ut litt informasjon og vi
 Lim inn følgende:
 ```
 ---
+---
 - name: Collect Cisco ISE facts
   hosts: ise1
   gather_facts: no
