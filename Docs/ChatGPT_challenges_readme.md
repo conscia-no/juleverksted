@@ -25,37 +25,27 @@ Participants progress at their own pace.
 
 ## 🟢 Level 1 — Warm-Up Tasks (Beginner)
 
-### 1. Install the Cisco ISE Ansible Collection
-- Install: `ansible-galaxy collection install cisco.ise`
-- Verify installation
-- Run the `version_info` module and print the output
-
-### 2. Gather Node & System Facts
-- Use `node_facts` to show node roles
-- Use `system_facts` to show personas and deployment details
-
-### 3. Connect to ISE Using HTTPAPI
-- Configure `ansible_connection: httpapi`
-- Validate login by running a simple module
+Disse har vi allerede gjort, men bruk ansible-doc og se hvilke moduler som finnes i cisco.ise
 
 ---
 
 ## 🟡 Level 2 — Practical Network Automation (Intermediate)
 
 ### 4. Create New Network Devices in ISE
-- Add network devices using `cisco.ise.network_device`
+- Add network devices using `cisco.ise.networkdevice`
 - Include IP, name, shared secret
 - Try adding several from a list
 
-### 5. Configure Authorization Policies
-- Create a rule using `cisco.ise.authorization_rule`
+### 5. Configure Authorization Profile
+- View the format of an authorization profile using `cisco.ise.authorizationprofile_info`
+- Create a rule using `cisco.ise.authorizationprofile`
 - Match on a username
 - Apply an authorization profile
 
 ### 6. Backup ISE via Ansible
 - Configure a repository
 - Trigger a backup
-- Check backup status using facts
+- Check backup status
 
 ---
 
@@ -66,9 +56,8 @@ Participants progress at their own pace.
 - Assign identity groups
 
 ### 8. Automate Certificate Management
-- Use `certificate_facts`
-- Export certificates
-- (Optional) Generate a CSR
+- View certificates
+- Generate a self-signed certificate
 
 ### 9. Build a "Lab Reset" Automation
 - Delete test network devices
@@ -117,24 +106,6 @@ Generate a Markdown report containing:
 
 ---
 
-## 🧱 Suggested Repository Structure
-```
-├── README.md
-├── inventories/
-│   └── ise.yml
-├── playbooks/
-│   ├── gather_facts.yml
-│   ├── add_devices.yml
-│   ├── create_users.yml
-│   ├── backup.yml
-│   ├── reset_lab.yml
-│   └── policies.yml
-├── group_vars/
-│   └── all.yml
-└── roles/ (optional)
-```
-
----
 
 ## 🚀 Tips for Participants
 - Use `debug:` to understand data structures
@@ -145,6 +116,6 @@ Generate a Markdown report containing:
 
 ---
 
-## 🙌 Enjoy the Hackathon!
+## 🙌 Enjoy!
 Feel free to expand, break things, fix them again — and have fun automating Cisco ISE with Ansible!
 
